@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Video Player</title>
+    <link rel="stylesheet" href="prostyele.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Accessible Video Player</h2>
+        
+        <input type="file" id="videoInput" accept="video/*">
+        <video id="videoPlayer" controls>
+            <track id="captionTrack" kind="subtitles" srclang="en" label="English">
+        </video>
+
+        <div class="captions-container">
+            <p id="captionsText">Captions will appear here...</p>
+        </div>
+
+        <div class="sign-language">
+            <h3>Sign Language Interpretation</h3>
+            <img id="signLanguage" src="sign_language_placeholder.gif" alt="Sign Language Animation">
+        </div>
+    </div>
+
+    <script src="profunc.js"></script>
+</body>
+</html>

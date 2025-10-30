@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        text-align: center;
+        background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <span id="result">Result</span>
+    <br>
+    <br>
+    <label for="marks">Enter marks:</label>
+    <input type="text" id="marks" placeholder="enter marks">
+    <br>
+    <input type="submit" vaule="submit" id="btn">
+
+</body>
+<script>
+    document.querySelector("#btn").addEventListener('click',function(){
+        let m=parseInt(document.querySelector('#marks').value);
+        if(m>=35 && m<55)
+    {
+        document.querySelector('#result').innerHTML=m+":C Grade";
+    }
+    else if(m>=55 && m<75)
+    {
+        document.querySelector('#result').innerHTML=m+":B Grade";
+    }
+    else if(m>=75 && m<=100)
+    {
+        document.querySelector('#result').innerHTML=m+":A Grade";
+    }
+    else
+    {
+        document.querySelector('#result').innerHTML=m+"invalid";;
+    }
+        
+    }
+)
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Calculator</title>
+    <style>
+        body{
+            background-color: #F2F0EF;
+        }
+        
+        .container {
+    border: 2px solid rgb(106, 47, 47);
+    margin: 106px auto;
+    padding: 75px;
+    width: 33%;
+    border-radius: 28px;
+    text-align: center;
+    background-color: rgb(132, 136, 136);
+}
+
+.form-group input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#bmiResult {
+    font-size: 22px;
+    color: #004d99;
+    margin-top: 20px;
+}
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Fitness Calculator</h1>
+        <div class="form-group">
+            <input type="text" id="weight" placeholder="Enter your weight in kg">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" id="height" placeholder="Enter your height in meters">
+        </div>
+        <br>
+        <button class="btn" id="bmiBtn">Calculate BMI</button>
+        <h2 id="bmiResult"></h2>
+    </div>
+    <script>
+        const bmiBtn = document.getElementById('bmiBtn');
+    if (bmiBtn) {
+        bmiBtn.addEventListener('click', () => {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const result = document.getElementById('bmiResult');
+
+            if (!weight || !height || height <= 0) {
+                result.innerText = "Please enter valid weight and height.";
+                result.style.color = "red";
+                return;
+            }
+
+            const bmi = weight / (height * height);
+            let status = "";
+
+            if (bmi < 18.5) status = "Underweight";
+            else if (bmi < 24.9) status = "Normal weight";
+            else if (bmi < 29.9) status = "Overweight";
+            else status = "Obese";
+
+            result.innerText = `Your BMI is ${bmi.toFixed(2)} (${status})`;
+            result.style.color = "#004d99";
+        });
+    }
+    </script>
+    
+</body>
+</html>

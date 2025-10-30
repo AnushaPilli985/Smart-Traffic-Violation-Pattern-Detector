@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About Us – Gym Services</title>
+  <style>
+    * {
+       margin:0; 
+       padding:0;
+        box-sizing:border-box;
+       }
+    body {
+       font-family: Arial,
+        sans-serif; color:#333; 
+        line-height:1.6; 
+      }
+    .container { 
+      max-width:800px; 
+      margin:2rem auto;
+       padding:1rem; 
+      }
+    h1, h2 { 
+      text-align:center;
+       margin-bottom:1rem;
+        color:#2a2a2a; 
+      }
+    .services { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, 
+      minmax(250px,1fr)); 
+      gap:1.5rem; 
+    }
+    .service {
+       background:#f9f9f9; 
+       padding:1rem;
+        border-radius:8px; 
+        box-shadow:0 2px 4px rgba(0,0,0,0.1);
+       }
+    .service img {
+       width: 100%;
+       height: 150px;
+       object-fit: cover;
+       border-radius: 6px;
+       margin-bottom: 0.75rem;
+    }
+    .service h3 { 
+      margin-bottom:0.5rem; 
+      color:#5e5b5a;
+     }
+    .cta {
+       text-align:center; 
+       margin:2rem 0;
+       }
+    .cta button { 
+      padding:0.75rem 1.5rem;
+       background:#565352; 
+       color:#fff;
+      border:none;
+       border-radius:4px; 
+       font-size:1.1rem; 
+       cursor:pointer; }
+    .features {
+       margin-top:2rem;
+        list-style: none;
+       }
+    .features li { 
+      margin-bottom:0.75rem;
+       padding-left:1.5rem; 
+       position: relative; }
+    .features li::before {
+      content: "✓";
+       color:#585250;
+        position:absolute; 
+        left:0;
+    }
+    footer { 
+      margin-top:3rem;
+       text-align:center;
+        font-size:0.9rem;
+         color:#777; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Services</h1>
+    <div class="services">
+      <div class="service">
+        <img src="personal training.jpg" alt="Personal Training">
+        <h3>Personal Training</h3>
+        <p>Individualized workout plans tailored to your fitness goals and current level. Delivered by certified trainers.</p>
+      </div>
+      <div class="service">
+        <img src="groupfitnessclasses.jpg" alt="Group Fitness Classes">
+        <h3>Group Fitness Classes</h3>
+        <p>Choose from yoga, Pilates, spinning, HIIT, and strength sessions that suit all levels and schedules.</p>
+      </div>
+      <div class="service">
+        <img src="fitness assessment.jpg" alt="Fitness Assessments">
+        <h3>Fitness Assessments</h3>
+        <p>Regular assessments including body-composition analysis, flexibility assessment, and cardio testing to track progress.</p>
+      </div>
+      <div class="service">
+        <img src="nutrition counselling.png" alt="Nutrition Counseling">
+        <h3>Nutrition Counseling</h3>
+        <p>Expert advice with custom diet plans and lifestyle workshops to complement your workout routine.</p>
+      </div>
+      <div class="service">
+        <img src="wellness and recovery.jpg" alt="Wellness & Recovery">
+        <h3>Wellness & Recovery</h3>
+        <p>Access to spa facilities like sauna, massage, and recovery sessions for post-workout relaxation.</p>
+      </div>
+      <div class="service">
+        <img src="child care programs.jpg" alt="Childcare Programs">
+        <h3>Childcare & Youth Programs</h3>
+        <p>Safe play zones and fitness classes for kids so parents can work out stress-free.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button id="learnMore">Learn More & Join Today</button>
+    </div>
+
+    <h2>Key Features You’ll Love</h2>
+    <ul class="features">
+      <li>State-of-the-art cardio and strength equipment</li>
+      <li>Clean, hygienic facilities and locker rooms</li>
+      <li>Flexible membership plans & 24/7 access</li>
+      <li>Community events & member challenges</li>
+      <li>Mobile app for booking classes and tracking progress</li>
+    </ul>
+
+    <footer>&copy; 2024 Srinu's Fitness • All rights reserved</footer>
+  </div>
+
+  <script>
+    document.getElementById('learnMore').addEventListener('click', function() {
+      alert('Thank you for your interest! Please visit our membership page or contact us for details.');
+    });
+  </script>
+</body>
+</html>
+

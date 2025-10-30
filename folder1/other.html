@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 12px;
+      background-color: #c381b1;
+      background-size: cover;
+      background-image: url("https://erp.today/wp-content/uploads/2023/07/boudhayan-bardhan-60tataLkJ0U-unsplash-scaled-e1690455961140.jpg");
+      background-position: fixed;
+      h1 {
+  font-size: 40px;
+  color: #2c2766;
+  text-align: center;
+  -webkit-text-stroke: 1px white;
+  /* OR use this if you prefer:
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+  */
+}
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    input {
+  width: 96%;
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin: 20px auto;              /* Center the button horizontally */
+  padding: 10px;
+  width: 75%;                     /* Button width */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;                 /* Reset to block for margin: auto to work */
+  text-align: center;
+  font-size: 18px;             /* Centers text inside the button */
+}
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.3em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Household Carbon Footprint Calculator</h1>
+
+  <form id="carbonForm">
+    <label>Electricity Usage (kWh/month):</label>
+    <input type="number" id="electricity" required>
+
+    <label>LPG Usage (kg/month):</label>
+    <input type="number" id="lpg" required>
+
+    <label>Petrol Usage (liters/month):</label>
+    <input type="number" id="petrol" required>
+
+    <label>Diesel Usage (liters/month):</label>
+    <input type="number" id="diesel" required>
+
+    <label>Waste Generated (kg/month):</label>
+    <input type="number" id="waste" required>
+
+    <button type="submit">Calculate Carbon Footprint</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('carbonForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const electricity = parseFloat(document.getElementById('electricity').value) || 0;
+      const lpg = parseFloat(document.getElementById('lpg').value) || 0;
+      const petrol = parseFloat(document.getElementById('petrol').value) || 0;
+      const diesel = parseFloat(document.getElementById('diesel').value) || 0;
+      const waste = parseFloat(document.getElementById('waste').value) || 0;
+
+      const emissions =
+        electricity * 0.82 +  // kg CO₂ per kWh
+        lpg * 2.983 +         // kg CO₂ per kg LPG
+        petrol * 2.31 +       // kg CO₂ per litre petrol
+        diesel * 2.68 +       // kg CO₂ per litre diesel
+        waste * 0.5;          // kg CO₂ per kg waste
+
+      document.getElementById('result').innerText =
+        `Estimated Monthly Carbon Footprint: ${emissions.toFixed(2)} kg CO₂`;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+h1{
+    color:black;
+    padding-top: 0cap;
+    background-color: blueviolet;
+    text-align: center;
+}
+.container{
+    background-color: blue;
+    width: 50%;
+    height:100px;
+}
+.block1{
+    background-color: red;
+
+}
+.box1{
+    width:50%;
+    height:30vh;
+    background-color: aquamarine;
+}

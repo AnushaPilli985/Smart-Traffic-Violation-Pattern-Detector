@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: url('image.jpg') no-repeat center center/cover;
+    height:100vh;
+
+}
+
+.header, .container {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.left {
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+
+.left img {
+    width: 136px;
+    filter: invert(100%);
+}
+
+.left div {
+    line-height: 19px;
+    font-size: 26px;
+    text-align: center;
+}
+
+
+.mid {
+    display: block;
+    width: 60%; 
+    margin: 29px auto;
+}
+ 
+
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 43px;
+    display: inline-block;
+}
+
+.navbar {
+    display: inline-block;
+    
+    display:left;
+    list-style: none;
+    
+    text-align: left;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 24px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 34px 20px;
+    font-size:20px;
+    margin-right:10px;
+}
+
+.navbar li a:hover, .navbar li a.active {
+    text-decoration: underline;
+    color: grey;
+}
+
+.btn {
+    font-family: Arial, sans-serif;
+    margin: 0 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(31, 30, 30);
+}
+
+.container {
+    border: 2px solid white;
+    margin: 106px auto;
+    padding: 75px;
+    width: 33%;
+    border-radius: 28px;
+    text-align: center;
+}
+
+.form-group input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#bmiResult {
+    font-size: 22px;
+    color: rgb(87, 13, 191);
+    margin-top: 20px;
+}

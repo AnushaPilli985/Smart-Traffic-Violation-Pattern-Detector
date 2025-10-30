@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Language Translator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://st4.depositphotos.com/1071909/21301/i/1600/depositphotos_213015394-stock-photo-online-translator-languages-learning-course.jpg') no-repeat center center/cover;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 36px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-size: 18px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    input::placeholder {
+      color: #eee;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #fff;
+      margin-bottom: 15px;
+    }
+    button {
+      width: 80%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      color: white;
+    }
+    #convertBtn {
+      background: #007bff;
+    }
+    #convertBtn:hover {
+      background: #0056b3;
+    }
+    #toggleTranslation {
+      background: #28a745;
+    }
+    #toggleTranslation:hover {
+      background: #218838;
+    }
+    #openFullscreen {
+      background: #dc3545;
+    }
+    #openFullscreen:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Language Translator</h2>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <button id="convertBtn">Translate to Sign</button>
+    <video id="videoPlayer" controls>
+      Your browser does not support the video tag.
+    </video>
+    <button id="toggleTranslation">Toggle Translation</button>
+    <button id="openFullscreen">Open Fullscreen</button>
+  </div>
+  <script src="popup.js"></script>
+  <script>
+    fetch('manifest.json')
+    .then(Response =>
+      response.json())
+      .then(data=>{
+        document.getElementById('').inner.html=
+
+      })
+      .catch(error=>
+        console.error('error loading JSON:',
+          error));
+        
+      
+      
+    
+    
+
+    
+    
+  </script>
+</body>
+</html>

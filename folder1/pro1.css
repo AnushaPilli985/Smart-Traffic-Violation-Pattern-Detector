@@ -1,0 +1,26 @@
+.container{
+    width:200%;
+    height:200vh;
+    display:flex;
+    
+    
+}
+ .container .row1{
+    background-color: rgb(79, 21, 133);
+    text-align: center;
+    font-size: medium;
+    height:10vh;
+    width:50%;
+}
+.container .row2{
+    background-color: rgb(17, 153, 78);
+    text-align: center;
+    font-size: medium;
+    height:10vh;
+    width:50%;
+}
+.container .row3{
+    height:30vh;
+    width: 100px;
+    background-color: antiquewhite;
+}

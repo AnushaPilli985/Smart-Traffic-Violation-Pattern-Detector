@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Attendance Dashboard</h1>
+    <form method="POST" action="/mark">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <button type="submit">Mark Attendance</button>
+    </form>
+
+    <form method="POST" action="/dashboard">
+        <input type="date" name="date">
+        <button type="submit">Filter</button>
+        <a href="/export">Export CSV</a>
+        <a href="/logout">Logout</a>
+        <button ><a href="login.html">Teacher Login</a> > </button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.name }}</td>
+            <td>{{ record.status }}</td>
+            <td>{{ record.date }}</td>
+            <td>{{ record.time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

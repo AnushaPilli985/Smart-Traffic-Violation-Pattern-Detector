@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Traffic Violations Dashboard</title>
+  <style>
+    body {
+     font-family: Arial, sans-serif; margin: 20px; background:#f7f7f7; }
+    table {
+     width:100%; border-collapse: collapse; background: white; }
+    th, td {
+     padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { 
+    background:#333; color:white; }
+    img {
+     max-width: 180px; }
+  </style>
+</head>
+<body>
+  <h1>Violations</h1>
+  <table id="tbl">
+    <thead><tr><th>Time</th><th>Vehicle ID</th><th>Type</th><th>Snapshot</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function load() {
+      try {
+        const res = await fetch("http://localhost:8000/violations");
+        const data = await res.json();
+        const tbody = document.querySelector("#tbl tbody");
+        tbody.innerHTML = "";
+        data.forEach(v => {
+          const imgHtml = v.image_path ? `<a href="${v.image_path.replace(window.location.origin, '')}" target="_blank"><img src="http://localhost:8000/images/${v.image_path.split('/').pop()}" /></a>` : "";
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${v.time}</td><td>${v.vehicle_id}</td><td>${v.violation_type}</td><td>${imgHtml}</td>`;
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    load();
+    setInterval(load, 5000); // refresh every 5s
+  </script>
+</body>
+</html>

@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 import os
 import json
 from datetime import datetime
-from detection import detect_violations, detect_video_violations
+from backend.detection import detect_violations, detect_video_violations
+
 
 # Get the absolute path to the backend directory
 backend_dir = os.path.dirname(os.path.abspath(__file__))
@@ -97,4 +98,5 @@ def delete_history_entry(timestamp):
     return jsonify({'message': 'History entry deleted successfully'})
 
 if __name__ == '__main__':
+
     app.run(debug=True)

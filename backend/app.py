@@ -1,8 +1,13 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from flask import Flask, request, jsonify, render_template, send_from_directory
 import os
 import json
 from datetime import datetime
-from backend.detection import detect_violations, detect_video_violations
+from detection import detect_violations, detect_video_violations
+
 
 
 # Get the absolute path to the backend directory
@@ -100,3 +105,4 @@ def delete_history_entry(timestamp):
 if __name__ == '__main__':
 
     app.run(debug=True)
+

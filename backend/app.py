@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 import os
 import json
 from datetime import datetime
-from detection.py import detect_violations, detect_video_violations
+from detection import detect_violations, detect_video_violations
 
 
 
@@ -105,5 +105,6 @@ def delete_history_entry(timestamp):
 if __name__ == '__main__':
 
     app.run(debug=True)
+
 
 
